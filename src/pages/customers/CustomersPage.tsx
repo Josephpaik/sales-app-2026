@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Splitter, Table, Input, Select, Button, Space, Tag, Empty, Descriptions, Tabs, Typography, Modal, Form, Row, Col, Alert, Timeline, Tooltip, App as AntApp } from 'antd';
-import { PlusOutlined, EditOutlined, EyeOutlined, EyeInvisibleOutlined, WarningOutlined } from '@ant-design/icons';
+import { Splitter, Table, Input, Select, Button, Space, Tag, Empty, Descriptions, Tabs, Typography, Modal, Form, Row, Col, Alert, Timeline, Tooltip, Segmented, App as AntApp } from 'antd';
+import { PlusOutlined, EditOutlined, EyeOutlined, EyeInvisibleOutlined, WarningOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { SearchBar, List, Card, Tabs as MTabs, Tag as MTag, Button as MButton, Popup, Form as MForm, Input as MInput, Selector, Toast } from 'antd-mobile';
 import { TeamOutline } from 'antd-mobile-icons';
 import { useDevice } from '@/hooks/useDevice';
 import { useDB } from '@/api/store';
 import { useLookups, StatusTag } from '@/components/common';
-import { currentUser, can, upsertCustomer, nextCustcd, findDuplicateSites, lineTotals, logAudit, visibleSales } from '@/api';
+import { currentUser, can, upsertCustomer, nextCustcd, findDuplicateSites, lineTotals, logAudit, visibleSales, approveCustomer, decideContractParty } from '@/api';
 import { CUSTOMER_CATEGORY_LABEL, type Customer } from '@/types';
 import { won, compact, maskPhone, maskEmail } from '@/utils/format';
 
@@ -36,6 +36,12 @@ function Desktop() {
   const rows = useCustomerRows(q, cat, sub);
   const selected = useDB((d) => d.customers.find((c) => c.custcd === id));
   const [form, setForm] = useState<{ open: boolean; value?: Customer }>({ open: false });
+  const [view, setView] = useState<'cust' | 'party' | 'approve'>('cust');
+  const parties = useDB((d) => d.contractParties);
+  const contracts = useDB((d) => d.contracts);
+  const allCustomers = useDB((d) => d.customers);
+  const pendingCust = allCustomers.filter((c) => c.approval === '승인대기');
+  const pendingParties = parties.filter((p) => p.status === '등재기안');
   useDB((d) => d.session.userId);
   const me = currentUser();
 
@@ -55,12 +61,15 @@ function Desktop() {
         </Splitter.Panel>
         <Splitter.Panel min={420}>
           <div className="pane">
-            <div className="pane-title"><span>고객사 마스터 <span className="muted">{rows.length}건</span></span>
-              {can.editMaster(me) && <Button size="small" type="primary" icon={<PlusOutlined />} onClick={() => setForm({ open: true })}>고객사 등록</Button>}</div>
+            <div className="pane-title">
+              <Space><Segmented size="small" value={view} onChange={(v) => setView(v as typeof view)} options={[{ value: 'cust', label: `고객사 마스터 (${rows.length})` }, { value: 'party', label: `계약처 마스터 (${parties.length})` }, { value: 'approve', label: `등록 승인함 (${pendingCust.length + pendingParties.length})` }]} /></Space>
+              {can.editSales(me) && view === 'cust' && <Button size="small" type="primary" icon={<PlusOutlined />} onClick={() => setForm({ open: true })}>{can.editMaster(me) ? '고객사 등록' : '고객사 등록 신청'}</Button>}
+            </div>
+            {view === 'cust' && (
             <Table size="small" dataSource={rows} rowKey="custcd" pagination={{ pageSize: 15, size: 'small' }} scroll={{ x: 780 }} rowClassName={(r) => (r.custcd === id ? 'selected' : '')} onRow={(r) => ({ onClick: () => nav(`/customers/${r.custcd}`) })}
               columns={[
                 { title: 'custcd', dataIndex: 'custcd', width: 80, render: (v, r) => <span>{v}{!r.tqsSynced && <Tooltip title="TQS 대사 예외 있음"><WarningOutlined style={{ color: '#fa8c16', marginLeft: 4 }} /></Tooltip>}</span> },
-                { title: '고객사', dataIndex: 'name', render: (v, r) => <><b>{v}</b>{r.group && <span className="muted"> · {r.group}</span>}</> },
+                { title: '고객사', dataIndex: 'name', render: (v, r) => <><b>{v}</b>{r.group && <span className="muted"> · {r.group}</span>}{r.approval === '승인대기' && <Tag color="gold" style={{ marginLeft: 6 }}>승인대기</Tag>}</> },
                 { title: '대분류', dataIndex: 'category', width: 70, render: (v) => <Tag color={v === 'CRM08' ? 'gold' : 'blue'}>{CUSTOMER_CATEGORY_LABEL[v as 'CRM07']}</Tag> },
                 { title: '소분류', dataIndex: 'subCategory', width: 60 },
                 { title: '사업자번호', dataIndex: 'bizNo', width: 110 },
@@ -68,7 +77,20 @@ function Desktop() {
                 { title: '영업 건', dataIndex: 'salesCount', width: 70, align: 'right' },
                 { title: '매출 누계', dataIndex: 'salesAmount', width: 110, align: 'right', render: (v) => compact(v), sorter: (a, b) => a.salesAmount - b.salesAmount },
                 { title: '최근', dataIndex: 'lastYm', width: 70 },
-              ]} />
+              ]} />)}
+            {view === 'party' && (
+            <Table size="small" dataSource={parties} rowKey="id" pagination={{ pageSize: 15, size: 'small' }} columns={[
+                { title: 'ID', dataIndex: 'id', width: 70 }, { title: '계약처', dataIndex: 'name', render: (v) => <b>{v}</b> }, { title: '사업자번호', dataIndex: 'bizNo', width: 120 },
+                { title: '거래구분', width: 100, render: (_, p) => p.direct ? '고객 직접거래' : '거래처' }, { title: '신용등급', dataIndex: 'creditRating', width: 90, render: (v) => v ?? '-' },
+                { title: '상태', dataIndex: 'status', width: 90, render: (v) => <Tag color={v === '등재' ? 'green' : v === '반려' ? 'red' : 'gold'}>{v}</Tag> }, { title: '등재/기안일', width: 110, render: (_, p) => p.approvedAt ?? p.requestedAt ?? '-' },
+                { title: '연결 계약', width: 80, align: 'right', render: (_, p) => contracts.filter((c) => c.partyId === p.id || c.party === p.name).length },
+              ]} />)}
+            {view === 'approve' && (<>
+              <div className="pane-title">고객사 등록 승인함 <span className="muted">영업담당자가 신청한 고객사는 영업지원 승인 후 영업 건에 사용할 수 있습니다</span></div>
+              <Table size="small" dataSource={pendingCust} rowKey="custcd" pagination={false} columns={[{ title: 'custcd', dataIndex: 'custcd', width: 80 }, { title: '고객사', dataIndex: 'name' }, { title: '사업자번호', dataIndex: 'bizNo', width: 120 }, { title: '신청일', dataIndex: 'createdAt', width: 100 }, { title: '처리', width: 160, render: (_, c) => can.editMaster(me) ? <Space size={4}><Button size="small" type="primary" icon={<CheckOutlined />} onClick={() => approveCustomer(c.custcd, '승인완료')}>승인</Button><Button size="small" danger icon={<CloseOutlined />} onClick={() => approveCustomer(c.custcd, '반려')}>반려</Button></Space> : <span className="muted">영업지원·관리자</span> }]} locale={{ emptyText: '승인 대기 고객사 없음' }} />
+              <div className="pane-title" style={{ marginTop: 14 }}>거래처(계약처) 등재기안 <span className="muted">계약 등록 단계에서 상신 · 승인 후 계약처 마스터 등재</span></div>
+              <Table size="small" dataSource={pendingParties} rowKey="id" pagination={false} columns={[{ title: '거래처', dataIndex: 'name' }, { title: '사업자번호', dataIndex: 'bizNo', width: 120 }, { title: '신용등급', dataIndex: 'creditRating', width: 90 }, { title: '기안', width: 160, render: (_, p) => `${p.requestedBy} · ${p.requestedAt}` }, { title: '처리', width: 160, render: (_, p) => can.approvePartner(me) ? <Space size={4}><Button size="small" type="primary" onClick={() => decideContractParty(p.id, '등재')}>등재 승인</Button><Button size="small" danger onClick={() => decideContractParty(p.id, '반려')}>반려</Button></Space> : <span className="muted">권한 없음</span> }]} locale={{ emptyText: '대기 중인 등재기안 없음' }} />
+            </>)}
           </div>
         </Splitter.Panel>
         <Splitter.Panel defaultSize={selected ? 430 : 280} min={260} collapsible>

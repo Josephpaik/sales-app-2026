@@ -5,9 +5,9 @@ import { FilterOutline, AddOutline, EditSOutline, PhonebookOutline } from 'antd-
 import { useDevice } from '@/hooks/useDevice';
 import { useDB } from '@/api/store';
 import { useSalesFilter } from './useSalesFilter';
-import { StatusTag, useLookups } from '@/components/common';
+import { StatusTag, CertTag, useLookups } from '@/components/common';
 import { lineTotals, transitionSales, addActivity, can, currentUser } from '@/api';
-import { statusDef, SALES_TYPE_LABEL, TAX_STATUS_LABEL, type SalesOpportunity, type SalesStatus } from '@/types';
+import { statusDef, SALES_TYPE_LABEL, TAX_STATUS_LABEL, PHASES, type SalesOpportunity, type SalesStatus } from '@/types';
 import { compact, won, maskPhone } from '@/utils/format';
 import SalesForm from './SalesForm';
 
@@ -80,9 +80,9 @@ function MobileList({ selectedId, onSelect }: { selectedId?: string; onSelect: (
         <div className="sheet-title">조회 조건</div>
         <div className="sheet-body">
           <div className="muted" style={{ margin: '8px 0 4px' }}>단계</div>
-          <Selector multiple columns={5} value={f.phases} onChange={(v) => setFilter({ ...f, phases: v as string[] })} options={['발굴', '진행', '수주', '이행', '종결'].map((p) => ({ label: p, value: p }))} />
-          <div className="muted" style={{ margin: '12px 0 4px' }}>담당자 {me.role === 'sales' ? `(${lk.teamName(me.teamId)})` : ''}</div>
-          <Selector columns={3} value={f.ownerId ? [f.ownerId] : []} onChange={(v) => setFilter({ ...f, ownerId: v[0] as string | undefined })} options={lk.users.filter((u) => u.role === 'sales' && (me.role !== 'sales' || u.teamId === me.teamId)).map((u) => ({ label: u.name, value: u.id }))} />
+          <Selector multiple columns={5} value={f.phases} onChange={(v) => setFilter({ ...f, phases: v as typeof f.phases })} options={PHASES.map((p) => ({ label: p, value: p }))} />
+          <div className="muted" style={{ margin: '12px 0 4px' }}>담당자 {['sales', 'team_lead'].includes(me.role) ? `(${lk.teamName(me.teamId)})` : ''}</div>
+          <Selector columns={3} value={f.ownerId ? [f.ownerId] : []} onChange={(v) => setFilter({ ...f, ownerId: v[0] as string | undefined })} options={lk.users.filter((u) => ['sales', 'team_lead'].includes(u.role) && (!['sales', 'team_lead'].includes(me.role) || u.teamId === me.teamId)).map((u) => ({ label: u.name, value: u.id }))} />
           <div className="muted" style={{ margin: '12px 0 4px' }}>연도</div>
           <Selector columns={3} value={[f.year]} onChange={(v) => setFilter({ ...f, year: (v[0] as string) ?? '' })} options={[{ label: '2026', value: '2026' }, { label: '2025', value: '2025' }, { label: '전체', value: '' }]} />
           <div style={{ margin: '12px 0 4px' }}>
@@ -110,7 +110,7 @@ export function MobileDetail({ sales: s, onEdit }: { sales: SalesOpportunity; on
   const [actText, setActText] = useState('');
   const [actKind, setActKind] = useState<'방문' | '통화' | '메일' | '회의' | '메모'>('방문');
   const editable = can.editSales(me) && !s.legacy;
-  const phases = ['발굴', '진행', '수주', '이행', '종결'];
+  const phases = PHASES;
 
   const openTransition = () => {
     const handler = ActionSheet.show({
@@ -129,7 +129,7 @@ export function MobileDetail({ sales: s, onEdit }: { sales: SalesOpportunity; on
   return (
     <div style={{ paddingBottom: 90 }}>
       <Card style={{ margin: 10, borderRadius: 12 }}>
-        <div className="tag-row" style={{ marginBottom: 6 }}><Tag color="default" fill="outline">{s.salescd}</Tag><StatusTag code={s.status} mobile />{s.crossCheckWarnings?.length ? <Tag color="warning">경고 {s.crossCheckWarnings.length}</Tag> : null}</div>
+        <div className="tag-row" style={{ marginBottom: 6 }}><Tag color="default" fill="outline">{s.salescd}</Tag><StatusTag code={s.status} mobile /><CertTag status={s.cert.status} mobile />{s.crossCheckWarnings?.length ? <Tag color="warning">경고 {s.crossCheckWarnings.length}</Tag> : null}</div>
         <div style={{ fontSize: 16, fontWeight: 700, lineHeight: 1.35 }}>{s.name}</div>
         <div className="m-list-item-sub" style={{ marginTop: 4 }}>{lk.customerName(s.custcd)} · {lk.teamName(s.teamId)} / {lk.userName(s.ownerId)}</div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10, fontSize: 13 }}>
@@ -152,7 +152,10 @@ export function MobileDetail({ sales: s, onEdit }: { sales: SalesOpportunity; on
           <List>
             <List.Item extra={<span onClick={() => nav(`/customers/${s.custcd}`)} style={{ color: '#1f3a8a' }}>{lk.customerName(s.custcd)}</span>}>고객사</List.Item>
             {customer?.contacts[0] && <List.Item extra={<a href={`tel:${customer.contacts[0].phone}`}>{customer.contacts[0].name} {maskPhone(customer.contacts[0].phone)}</a>}>고객 담당자</List.Item>}
-            <List.Item extra={`${s.salesType} · ${SALES_TYPE_LABEL[s.salesType]}`}>영업구분</List.Item>
+            <List.Item extra={`${s.salesType} · ${SALES_TYPE_LABEL[s.salesType]}`}>계약구분</List.Item>
+            <List.Item extra={s.partyName ?? '-'}>계약처</List.Item>
+            <List.Item extra={s.parentSalescd ?? '-'}>본사업</List.Item>
+            <List.Item extra={s.inspection?.status ?? '-'}>검수</List.Item>
             <List.Item extra={s.relation}>도입관계</List.Item>
             <List.Item extra={lk.partnerName(s.partnerId)}>파트너</List.Item>
             <List.Item extra={s.orderDate ?? '-'}>수주일</List.Item>
@@ -165,11 +168,11 @@ export function MobileDetail({ sales: s, onEdit }: { sales: SalesOpportunity; on
         <Tabs.Tab title={`라인 ${s.lines.length}`} key="lines">
           <List>
             {s.lines.map((l) => (
-              <List.Item key={l.id} description={`${l.itemName} · 수량 ${l.qty}`} extra={<div style={{ textAlign: 'right' }}><div className="m-list-item-amt">{l.kind === '매출' ? won(l.sales) : won(l.buy)}</div><div className="m-list-item-sub">{l.kind}</div></div>}>
-                {l.productCode ? lk.productName(l.productCode) : l.itemName}
+              <List.Item key={l.id} description={`${l.sub}${l.license ? ' · ' + l.license : ''} · 수량 ${l.qty}${l.hyboost ? ' · ' + l.hyboost + ' ×' + (l.hyboostQty ?? 0) : ''}`} extra={<div style={{ textAlign: 'right' }}><div className="m-list-item-amt">{l.kind === '매출' || l.kind === '서비스' ? won(l.sales) : won(l.buy)}</div><div className="m-list-item-sub">{l.kind}</div></div>}>
+                {l.product}
               </List.Item>
             ))}
-            {!s.lines.length && <List.Item description="PC 화면에서 제품 라인을 추가하세요">라인 없음</List.Item>}
+            {!s.lines.length && <List.Item description="PC 화면에서 제품라인을 추가하세요 (제품분류 216 품목 연동)">라인 없음</List.Item>}
           </List>
           <div style={{ padding: '8px 14px', fontSize: 12, color: '#6b7590' }}>매출 {won(t.sales)} / 매입 {won(t.buy)} / 이익 {won(t.profit)} ({t.margin}%)</div>
         </Tabs.Tab>

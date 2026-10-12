@@ -1,0 +1,2180 @@
+{
+"hyboostModels": [
+"R760(OCR전용)",
+"ESC4000-E11(OCR전용)",
+"ESC4000-E11(GPUv1-LLM)",
+"ESC4000-E11(GPUv2-LLM)",
+"NF1000",
+"NF2000",
+"NF3000",
+"NF5000",
+"EF1000SP1",
+"EF2000SP1",
+"EF1000",
+"EF2000",
+"BG500 V4(BIG-i전용모델)",
+"SR650V3(OCR전용)"
+],
+"items": [
+{
+"id": "XL002",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "Privacy-i AIDR",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL003",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL004",
+"kind": "내부원가",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL005",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL006",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL007",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL008",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL009",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL010",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL011",
+"kind": "서비스",
+"group": "Endpoint",
+"product": "Privacy-i AIDR",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL012",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "Privacy-i Discover",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL013",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL014",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL015",
+"kind": "내부원가",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL016",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL017",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL018",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL019",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL020",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL021",
+"kind": "서비스",
+"group": "Endpoint",
+"product": "Privacy-i Discover",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL022",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "Privacy-i DLP",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL023",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "Privacy-i API",
+"unit": "EA",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL024",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "Privacy-i Cloud",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL025",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "Privacy-i OCR",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL026",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL027",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "Privacy-i 비가시성 워터마크",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL028",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL029",
+"kind": "내부원가",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL030",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL031",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL032",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL033",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL034",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL035",
+"kind": "서비스",
+"group": "Endpoint",
+"product": "Privacy-i DLP",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL036",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i Scanner",
+"sub": "Privacy-i Scanner",
+"unit": "EA",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL037",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "Privacy-i EDR",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL038",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL039",
+"kind": "내부원가",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL040",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL041",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL042",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL043",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL044",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL045",
+"kind": "서비스",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL046",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i EDR",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL047",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "Privacy-i 내PC지키미",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL048",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL049",
+"kind": "내부원가",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL050",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL051",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL052",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL053",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL054",
+"kind": "매입",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL055",
+"kind": "서비스",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL056",
+"kind": "매출",
+"group": "Endpoint",
+"product": "Privacy-i 내PC지키미",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL057",
+"kind": "매출",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "WebKeeperSG AI DLP",
+"unit": "Mbps / Gbps / 유저",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL058",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL059",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL060",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL061",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL062",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL063",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL064",
+"kind": "매입",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL065",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL066",
+"kind": "매출",
+"group": "Network",
+"product": "WSG AI DLP",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL067",
+"kind": "매출",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "WebKeeperSG NDLP",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL068",
+"kind": "매출",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL069",
+"kind": "매출",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "WebKeeperSG NDLP OCR",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL070",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL071",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL072",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL073",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL074",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL075",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL076",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL077",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG NDLP",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL078",
+"kind": "매출",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "WebKeeperSG Suite",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL079",
+"kind": "매출",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "WebKeeperSG Suite(AI DLP)",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL080",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL081",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL082",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL083",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL084",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL085",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL086",
+"kind": "매입",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL087",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL088",
+"kind": "매출",
+"group": "Network",
+"product": "WSG Suite",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL089",
+"kind": "매출",
+"group": "Network",
+"product": "WSG VA",
+"sub": "WebKeeperSG VA",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL090",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL091",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG VA",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL092",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL093",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL094",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL095",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL096",
+"kind": "매입",
+"group": "Network",
+"product": "WSG VA",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL097",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG VA",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL098",
+"kind": "매출",
+"group": "Network",
+"product": "WSG VA",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL099",
+"kind": "매출",
+"group": "Network",
+"product": "WSG NF",
+"sub": "WebKeeperSG NF",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL100",
+"kind": "매출",
+"group": "Network",
+"product": "WSG NF",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL101",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL102",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG NF",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL103",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL104",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL105",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL106",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL107",
+"kind": "매입",
+"group": "Network",
+"product": "WSG NF",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL108",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG NF",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL109",
+"kind": "매출",
+"group": "Network",
+"product": "WSG TI",
+"sub": "WebKeeperSG TI",
+"unit": "Mbps / Gbps",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL110",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL111",
+"kind": "내부원가",
+"group": "Network",
+"product": "WSG TI",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL112",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL113",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL114",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL115",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL116",
+"kind": "매입",
+"group": "Network",
+"product": "WSG TI",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL117",
+"kind": "서비스",
+"group": "Network",
+"product": "WSG TI",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL118",
+"kind": "매출",
+"group": "Network",
+"product": "WSG TI",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL119",
+"kind": "매출",
+"group": "Network",
+"product": "VDi",
+"sub": "VDi",
+"unit": "User",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL120",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL121",
+"kind": "내부원가",
+"group": "Network",
+"product": "VDi",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL122",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL123",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL124",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL125",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL126",
+"kind": "매입",
+"group": "Network",
+"product": "VDi",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL127",
+"kind": "서비스",
+"group": "Network",
+"product": "VDi",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL128",
+"kind": "매출",
+"group": "Network",
+"product": "VDi",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL129",
+"kind": "매출",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "DB-i",
+"unit": "Core",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL130",
+"kind": "매출",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "DB-i Cloud",
+"unit": "Core / Node",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL131",
+"kind": "매출",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL132",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL133",
+"kind": "내부원가",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL134",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL135",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL136",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL137",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL138",
+"kind": "매입",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL139",
+"kind": "서비스",
+"group": "Server & DB",
+"product": "DB-i",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL140",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "Server-i",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL141",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "Server-i API",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL142",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "Server-i Cloud",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL143",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "Server-i OCR",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL144",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "Server-i 서버지키미(취약점점검)",
+"unit": "Agent",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL145",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL146",
+"kind": "내부원가",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL147",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL148",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL149",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL150",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL151",
+"kind": "매입",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL152",
+"kind": "서비스",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL153",
+"kind": "매출",
+"group": "Server & DB",
+"product": "Server-i",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL154",
+"kind": "매출",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "APP-i",
+"unit": "Core",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL155",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL156",
+"kind": "내부원가",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL157",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL158",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL159",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL160",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL161",
+"kind": "매입",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL162",
+"kind": "서비스",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL163",
+"kind": "매출",
+"group": "Server & DB",
+"product": "APP-i",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL164",
+"kind": "매출",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "WAS-i",
+"unit": "Core",
+"versionInput": true,
+"networkInput": true
+},
+{
+"id": "XL165",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL166",
+"kind": "내부원가",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "HB부품",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL167",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL168",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL169",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "조달영업수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL170",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL171",
+"kind": "매입",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "조달구축수수료",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL172",
+"kind": "서비스",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "유지관리",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL173",
+"kind": "매출",
+"group": "Server & DB",
+"product": "WAS-i",
+"sub": "BiG-i",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL174",
+"kind": "매출",
+"group": "서비스",
+"product": "인력비용",
+"sub": "개발 Cutsomizing",
+"unit": "MM",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL175",
+"kind": "매출",
+"group": "서비스",
+"product": "인력비용",
+"sub": "별도 기술지원",
+"unit": "MM",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL177",
+"kind": "매출",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "통신서비스사업",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL178",
+"kind": "매출",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "추가정산",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL179",
+"kind": "매입",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "감액정산",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL180",
+"kind": "매입",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "인력비용",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL181",
+"kind": "매입",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "유지관리(외주)",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL182",
+"kind": "매입",
+"group": "서비스",
+"product": "통신서비스사업",
+"sub": "잡자재",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL186",
+"kind": "매출",
+"group": "컨설팅",
+"product": "개인정보영향평가",
+"sub": "개인정보영향평가",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL187",
+"kind": "매입",
+"group": "컨설팅",
+"product": "개인정보영향평가",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL188",
+"kind": "매입",
+"group": "컨설팅",
+"product": "개인정보영향평가",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL189",
+"kind": "매입",
+"group": "컨설팅",
+"product": "개인정보영향평가",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL190",
+"kind": "매출",
+"group": "컨설팅(정보보호)",
+"product": "ISMS",
+"sub": "ISMS",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL191",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISMS",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL192",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISMS",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL193",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISMS",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL194",
+"kind": "매출",
+"group": "컨설팅(정보보호)",
+"product": "ISO 27001",
+"sub": "ISO 27001",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL195",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISO 27001",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL196",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISO 27001",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL197",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "ISO 27001",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL198",
+"kind": "매출",
+"group": "컨설팅(정보보호)",
+"product": "주요정보 통신기반시설 취약점분석평가",
+"sub": "주요정보 통신기반시설 취약점분석평가",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL199",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "주요정보 통신기반시설 취약점분석평가",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL200",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "주요정보 통신기반시설 취약점분석평가",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL201",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "주요정보 통신기반시설 취약점분석평가",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL202",
+"kind": "매출",
+"group": "컨설팅(정보보호)",
+"product": "보안취약점 진단",
+"sub": "보안취약점 진단",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL203",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "보안취약점 진단",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL204",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "보안취약점 진단",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL205",
+"kind": "매입",
+"group": "컨설팅(정보보호)",
+"product": "보안취약점 진단",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL206",
+"kind": "매출",
+"group": "컨설팅(개인정보보호)",
+"product": "ISMS-P",
+"sub": "ISMS-P",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL207",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISMS-P",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL208",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISMS-P",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL209",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISMS-P",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL210",
+"kind": "매출",
+"group": "컨설팅(개인정보보호)",
+"product": "ISO 27701",
+"sub": "ISO 27701",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL211",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISO 27701",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL212",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISO 27701",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL213",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "ISO 27701",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL214",
+"kind": "매출",
+"group": "컨설팅(개인정보보호)",
+"product": "개인정보 실태점검",
+"sub": "개인정보 실태점검",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL215",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "개인정보 실태점검",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL216",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "개인정보 실태점검",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL217",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "개인정보 실태점검",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL218",
+"kind": "매출",
+"group": "컨설팅(개인정보보호)",
+"product": "보호수준평가",
+"sub": "보호수준평가",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL219",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "보호수준평가",
+"sub": "외주용역비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL220",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "보호수준평가",
+"sub": "내부인력비",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+},
+{
+"id": "XL221",
+"kind": "매입",
+"group": "컨설팅(개인정보보호)",
+"product": "보호수준평가",
+"sub": "기타",
+"unit": "",
+"versionInput": false,
+"networkInput": false
+}
+]
+}

@@ -6,8 +6,8 @@
 import { useSyncExternalStore } from 'react';
 import * as seed from '@/data/seed';
 import type {
-  AuditLog, CommonCode, Contract, Customer, CustomerHistory, GoldmineAlias, Partner, Product, ProductFamily,
-  SalesOpportunity, Team, TqsReconException, User,
+  AuditLog, CommonCode, Contract, ContractParty, Customer, CustomerHistory, DashboardPrefs, Document, FulfillRequest, GoldmineAlias, Notice, Partner,
+  ProductItem, Receivable, ReportSnapshot, Resource, SalesOpportunity, Schedule, Team, TqsReconException, User, VisitLog,
 } from '@/types';
 
 export interface DB {
@@ -16,10 +16,20 @@ export interface DB {
   customers: Customer[];
   customerHistory: CustomerHistory[];
   partners: Partner[];
-  productFamilies: ProductFamily[];
-  products: Product[];
+  contractParties: ContractParty[];
+  productItems: ProductItem[];
+  hyboostModels: string[];
   sales: SalesOpportunity[];
   contracts: Contract[];
+  receivables: Receivable[];
+  fulfillRequests: FulfillRequest[];
+  documents: Document[];
+  visitLogs: VisitLog[];
+  schedules: Schedule[];
+  notices: Notice[];
+  resources: Resource[];
+  reportSnapshots: ReportSnapshot[];
+  dashboard: DashboardPrefs;
   commonCodes: CommonCode[];
   auditLogs: AuditLog[];
   tqsRecon: TqsReconException[];
@@ -27,7 +37,7 @@ export interface DB {
   session: { userId: string };
 }
 
-const STORAGE_KEY = 'sales-app-2026:db:v1';
+const STORAGE_KEY = 'sales-app-2026:db:v2'; // V2.4 반영으로 스키마 변경 → 키 변경(구 데이터 자동 폐기)
 
 function freshDB(): DB {
   return structuredClone({
@@ -36,10 +46,20 @@ function freshDB(): DB {
     customers: seed.customers,
     customerHistory: seed.customerHistory,
     partners: seed.partners,
-    productFamilies: seed.productFamilies,
-    products: seed.products,
+    contractParties: seed.contractParties,
+    productItems: seed.productItems,
+    hyboostModels: seed.hyboostModels,
     sales: seed.sales,
     contracts: seed.contracts,
+    receivables: seed.receivables,
+    fulfillRequests: seed.fulfillRequests,
+    documents: seed.documents,
+    visitLogs: seed.visitLogs,
+    schedules: seed.schedules,
+    notices: seed.notices,
+    resources: seed.resources,
+    reportSnapshots: [],
+    dashboard: { order: ['tasks', 'favorites', 'kpis', 'notices', 'schedule', 'visits', 'pipeline', 'workflow'], visible: ['tasks', 'favorites', 'kpis', 'notices', 'schedule', 'visits', 'pipeline', 'workflow'], favorites: ['/sales', '/biz/visits', '/biz/receivables', '/biz/report', '/biz/docs', '/biz/hyboost', '/biz/license'] },
     commonCodes: seed.commonCodes,
     auditLogs: seed.auditLogs,
     tqsRecon: seed.tqsRecon,
@@ -106,4 +126,5 @@ export const nowStamp = () => {
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 };
 export const today = () => nowStamp().slice(0, 10);
+export const addDays = (date: string, n: number) => { const d = new Date(date + 'T12:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
 export const uid = (prefix: string) => `${prefix}${Date.now().toString(36)}${Math.floor(Math.random() * 1000)}`;

@@ -1,6 +1,6 @@
 {
   "name": "sales-app-2026",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "description": "소만사 신규 영업관리시스템 프로토타입 — PC(Ant Design) + 모바일/태블릿(Ant Design Mobile) 반응형 단일 웹",
   "type": "module",

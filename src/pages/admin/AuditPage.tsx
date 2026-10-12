@@ -5,7 +5,7 @@ import { useDevice } from '@/hooks/useDevice';
 import { useDB } from '@/api/store';
 import type { AuditLog } from '@/types';
 
-const COLOR: Record<AuditLog['action'], string> = { 로그인: 'default', 조회: 'default', 등록: 'blue', 수정: 'geekblue', 삭제: 'red', 상태변경: 'green', 다운로드: 'orange', 개인정보열람: 'volcano' };
+const COLOR: Record<AuditLog['action'], string> = { 로그인: 'default', 조회: 'default', 등록: 'blue', 수정: 'geekblue', 삭제: 'red', 상태변경: 'green', 다운로드: 'orange', 개인정보열람: 'volcano', 승인: 'purple' };
 
 /** 감사 로그 — 누가·언제·무엇을 (개인정보 열람·다운로드 포함), ISMS-P 2.9/2.11 대응 */
 export default function AuditPage() {

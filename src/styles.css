@@ -41,7 +41,7 @@ body { -webkit-font-smoothing: antialiased; }
 .m-app { display: flex; flex-direction: column; height: 100dvh; background: var(--bg); }
 .m-body { flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; }
 .m-body.split { display: grid; grid-template-columns: minmax(300px, 38%) 1fr; overflow: hidden; }
-.m-body.split > * { overflow: auto; height: 100%; }
+.m-body.split > :not(.m-fab) { overflow: auto; height: 100%; }
 .m-body.split > .m-list-pane { border-right: 1px solid #e5e9f2; background: #fff; }
 .m-body.split > .m-detail-pane { background: var(--bg); }
 .m-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #8a93aa; gap: 8px; }
@@ -65,3 +65,43 @@ body { -webkit-font-smoothing: antialiased; }
 .tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
 @media (max-width: 767px) { .m-kpis { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 768px) { .m-kpis { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- V2.4 대시보드 위젯 ---------- */
+.sider-foot { color: #7f8bb3; font-size: 11px; padding: 14px 20px; }
+.task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.task-card { background: #fff; border: 1px solid #e5e9f2; border-radius: 10px; padding: 10px 12px; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 4px; font: inherit; }
+.task-card span { font-size: 12px; color: #6b7590; }
+.task-card b { font-size: 20px; color: #1e2a4a; }
+.task-card.hot b { color: #ad6800; }
+.task-card:hover { border-color: #1f3a8a; }
+.fav-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.fav-chip { background: #f0f3fb; border: 1px solid #dfe5f3; border-radius: 8px; padding: 8px 12px; font: inherit; font-weight: 600; color: #1e2a4a; cursor: pointer; }
+.fav-chip:hover { background: #e4eafb; }
+.notice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.notice-card { border-radius: 10px; padding: 10px 12px; font-size: 13px; border-left: 4px solid #d97706; background: #fffaf2; }
+.notice-card.r { border-left-color: #1f3a8a; background: #f4f6fb; }
+.notice-card b { margin-left: 4px; }
+.notice-card .muted { margin-top: 4px; }
+.sched-row { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid #eef1f7; }
+.sched-time { background: #eef2ff; border-radius: 8px; padding: 6px 8px; font-weight: 700; font-size: 12px; text-align: center; min-width: 54px; color: #1f3a8a; }
+.visit-row { padding: 6px 0; border-bottom: 1px solid #eef1f7; font-size: 13px; }
+.wf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.wf-card { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #e5e9f2; border-radius: 10px; padding: 10px 12px; cursor: pointer; font: inherit; text-align: left; }
+.wf-card:hover { border-color: #1f3a8a; }
+.wf-count { border: 1px solid #1f3a8a; color: #1f3a8a; border-radius: 8px; padding: 4px 8px; font-weight: 700; }
+.m-section .task-grid, .m-section .fav-row, .m-section .notice-grid, .m-section .wf-grid, .m-section .kpi-row, .m-section .sched-row, .m-section .visit-row { margin: 0 12px 12px; }
+.m-section .notice-grid, .m-section .wf-grid { grid-template-columns: 1fr; }
+.m-section .task-grid { grid-template-columns: repeat(2, 1fr); }
+/* 단계 스트립 (프로젝트 상세) */
+.step-strip { display: flex; gap: 6px; overflow: auto; padding: 4px 0 8px; }
+.step-strip > div { flex: 1; min-width: 86px; background: #f0f3fb; border-radius: 8px; padding: 6px 8px; font-size: 11px; color: #6b7590; }
+.step-strip > div b { display: block; font-size: 12px; color: #1e2a4a; }
+.step-strip > div.ok { background: #e6f4ea; } .step-strip > div.ok b { color: #237804; }
+.step-strip > div.warn { background: #fff7e6; } .step-strip > div.warn b { color: #ad6800; }
+.step-strip > div.cur { outline: 2px solid #1f3a8a; }
+.biz-tabs { background: #fff; border: 1px solid #e5e9f2; border-radius: 10px; padding: 6px 8px; margin-bottom: 12px; display: flex; gap: 4px; flex-wrap: wrap; }
+.biz-tab { border: 0; background: none; padding: 7px 12px; border-radius: 8px; font: inherit; font-weight: 600; color: #4b5570; cursor: pointer; }
+.biz-tab.active { background: #1f3a8a; color: #fff; }
+.m-biz-tabs { display: flex; gap: 6px; overflow: auto; padding: 8px 12px; background: #fff; border-bottom: 1px solid #e5e9f2; position: sticky; top: 0; z-index: 5; }
+.m-biz-tabs .biz-tab { white-space: nowrap; font-size: 13px; padding: 6px 10px; background: #f0f3fb; }
+.m-biz-tabs .biz-tab.active { background: #1f3a8a; color: #fff; }

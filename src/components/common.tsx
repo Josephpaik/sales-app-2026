@@ -1,15 +1,21 @@
 import { Tag as ATag, Progress } from 'antd';
 import { Tag as MTag } from 'antd-mobile';
-import { statusDef, type SalesStatus, TAX_STATUS_LABEL, type TaxStatus } from '@/types';
+import { statusDef, type SalesStatus, TAX_STATUS_LABEL, type TaxStatus, type CertStatus } from '@/types';
 import { useDB } from '@/api/store';
 
 export function StatusTag({ code, mobile }: { code: SalesStatus; mobile?: boolean }) {
   const d = statusDef(code);
   if (mobile) {
-    const color = d.color === 'success' ? 'success' : d.color === 'error' ? 'danger' : d.color === 'warning' ? 'warning' : d.color === 'processing' ? 'primary' : 'default';
+    const color = d.color === 'success' ? 'success' : d.color === 'error' ? 'danger' : d.color === 'warning' || d.color === 'orange' ? 'warning' : d.color === 'processing' ? 'primary' : 'default';
     return <MTag color={color} fill="outline" style={{ '--border-radius': '6px' } as never}>{d.name}</MTag>;
   }
   return <ATag color={d.color} style={{ marginInlineEnd: 0 }}>{d.name}</ATag>;
+}
+
+export function CertTag({ status, mobile }: { status: CertStatus; mobile?: boolean }) {
+  const color = status === '승인완료' ? 'green' : status === '반려' ? 'red' : 'gold';
+  if (mobile) return <MTag color={status === '승인완료' ? 'success' : status === '반려' ? 'danger' : 'warning'} fill="outline">{status}</MTag>;
+  return <ATag color={color} style={{ marginInlineEnd: 0 }}>{status}</ATag>;
 }
 
 export function TaxTag({ code }: { code: TaxStatus }) {
@@ -26,13 +32,14 @@ export function useLookups() {
   const teams = useDB((d) => d.teams);
   const customers = useDB((d) => d.customers);
   const partners = useDB((d) => d.partners);
-  const products = useDB((d) => d.products);
+  const parties = useDB((d) => d.contractParties);
+  const productItems = useDB((d) => d.productItems);
   return {
-    users, teams, customers, partners, products,
+    users, teams, customers, partners, parties, productItems,
     userName: (id: string) => users.find((u) => u.id === id)?.name ?? id,
     teamName: (id: string) => teams.find((t) => t.id === id)?.name ?? id,
     customerName: (id: string) => customers.find((c) => c.custcd === id)?.name ?? id,
     partnerName: (id?: string) => (id ? partners.find((p) => p.id === id)?.name ?? id : '-'),
-    productName: (code?: string) => (code ? products.find((p) => p.code === code)?.name ?? code : '-'),
+    partyName: (id?: string) => (id ? parties.find((p) => p.id === id)?.name ?? id : '-'),
   };
 }
