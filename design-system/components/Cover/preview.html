@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>SOMANSA Sales Workspace</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:0; width:960px; height:112px; }
+  .art svg { display:block; width:960px; height:112px; }
+  .deep { fill:var(--brand-dark); }
+  .brand { fill:var(--brand); }
+  .tint { fill:var(--highlight-border); }
+  .hot { fill:var(--notice); }
+  .slab { rx:var(--radius-10); }
+  .tile { rx:var(--radius-8); }
+  .words { position:absolute; left:var(--space-24); right:var(--space-24); bottom:var(--space-24); }
+  .name { margin:0; font-size:64px; line-height:.95; font-weight:800; letter-spacing:-.01em; color:var(--ink); white-space:nowrap; }
+  .tag { margin:var(--space-8) 0 0 3px; font-size:14px; line-height:20px; color:var(--ink-muted); max-width:440px; }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 960 112" width="960" height="112">
+<!--
+  blocks      brand-dark 228 (sider-width) × 122 bled off the top · brand 320 × 110 · highlight-border tint tiles · one notice tile (the "hot" state, kept small) — ≈30% of 960×288
+  arrangement top band, the shell read left to right: Sider slab, then the brand pane, then the dashboard widget grid; the name sits below (too wide for the 440px zone)
+  pattern     tiles cut by the radius tokens, some merged two-wide, from "dense UI: panes, task grids and KPI rows on a 10–12px gap" — the dashboard's own grid
+  scales      gutters space-12; tile 40 at a 52 pitch (40 + space-12); corners radius-10 (slabs, like panes) and radius-8 (tiles, like chips); band 112 tall
+-->
+<rect class="deep slab" x="24" y="-10" width="228" height="122" rx="10"/>
+<rect class="brand slab" x="264" y="-10" width="320" height="110" rx="10"/>
+<rect class="tint tile" x="596" y="8" width="40" height="40" rx="8"/>
+<rect class="tint tile" x="648" y="8" width="40" height="40" rx="8"/>
+<rect class="brand tile" x="700" y="8" width="92" height="40" rx="8"/>
+<rect class="tint tile" x="804" y="8" width="40" height="40" rx="8"/>
+<rect class="tint tile" x="856" y="8" width="80" height="40" rx="8"/>
+<rect class="tint tile" x="596" y="60" width="40" height="40" rx="8"/>
+<rect class="deep tile" x="648" y="60" width="92" height="40" rx="8"/>
+<rect class="tint tile" x="752" y="60" width="40" height="40" rx="8"/>
+<rect class="hot tile" x="804" y="60" width="40" height="40" rx="8"/>
+<rect class="tint tile" x="856" y="60" width="40" height="40" rx="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">SOMANSA Sales Workspace</h1>
+<p class="tag">영업 · 계약 · 납품 · 실적 통합관리</p>
+</div>
+</div>
+</body>
+</html>

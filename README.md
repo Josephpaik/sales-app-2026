@@ -12,8 +12,10 @@ npm install
 npm run dev        # http://localhost:5173
 npm run build      # 타입체크 + 프로덕션 빌드 (dist/)
 npm run preview    # 빌드 결과 미리보기 (http://localhost:4173/sales-app-2026/)
+npm run build:ds   # 디자인 시스템 번들 (design-system/components/bundle.js·bundle.css)
 ```
 
+- 디자인 시스템(토큰·가이드·컴포넌트 미리보기)은 `design-system/` — 시작점은 `design-system/README.md`, 토큰은 `design-system/tokens.json`.
 - Node 20 이상 권장. 맥북 로컬(수행계획서 4-1 #8 개발 환경)에서 그대로 동작합니다.
 - 브라우저 폭을 줄이면 자동으로 모바일/태블릿 레이아웃으로 전환됩니다. 시연 시 강제 전환: `#/sales?device=phone|tablet|desktop`
 - 화면 우측 상단(모바일은 사람 아이콘)에서 **역할 6종 전환**과 **시연 데이터 초기화**가 가능합니다. 데이터는 브라우저 localStorage에 저장됩니다.

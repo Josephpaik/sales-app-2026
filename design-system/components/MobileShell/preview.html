@@ -1,0 +1,15 @@
+<!-- @dsCard group="Layout" height=460 -->
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><style>html,body{margin:0}body{padding:16px;}</style></head>
+<body>
+<div id="root" style="width:360px;height:440px;margin:-6px auto;border:1px solid var(--border);overflow:hidden"></div>
+<script>
+  var S = window.SomansaSales, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(S.MobileShell, { active: '/sales', title: '영업 현황' },
+    h('div', { className: 'm-kpis' }, h('div', { className: 'm-kpi' }, h('div', { className: 'l' }, '이번 달 수주'), h('div', { className: 'v' }, '4,820만원')), h('div', { className: 'm-kpi' }, h('div', { className: 'l' }, '진행 중'), h('div', { className: 'v' }, '18건'))),
+    h('div', { className: 'm-section' }, h('div', { className: 'm-section-title' }, h('span', null, '한빛은행 DLP 고도화'), h(S.StatusTag, { code: 'SN03Z', mobile: true })),
+      h('div', { style: { padding: '0 14px 12px' } }, h('div', { className: 'm-list-item-sub' }, 'SP-2026-0142 · 김영업'), h('div', { className: 'm-list-item-amt' }, '38,500,000원')))));
+</script>
+</body>
+</html>
