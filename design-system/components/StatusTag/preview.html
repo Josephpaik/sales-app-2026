@@ -1,0 +1,19 @@
+<!-- @dsCard group="Status" height=150 -->
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><style>html,body{margin:0}body{padding:16px;}</style></head>
+<body>
+<div style="display:grid;gap:12px">
+<div><div class="muted" style="margin-bottom:4px">영업 상태 (SALES_STATUS · PC)</div><div class="tag-row" id="a"></div></div>
+<div><div class="muted" style="margin-bottom:4px">서티 · 세금계산서</div><div class="tag-row" id="b"></div></div>
+<div><div class="muted" style="margin-bottom:4px">모바일 (fill="outline")</div><div class="tag-row" id="c"></div></div>
+</div>
+<script>
+  var S = window.SomansaSales, h = React.createElement;
+  var F = React.Fragment;
+  ReactDOM.createRoot(document.getElementById('a')).render(h(F, null, ['SN02Z','SN03Z','SN04Z','SN05Z','SN07Z','SN09Z','SN10Z','SN12M','SN12Z','SN13Z','SN14Z'].map(function (c) { return h(S.StatusTag, { code: c, key: c }); })));
+  ReactDOM.createRoot(document.getElementById('b')).render(h(F, null, ['승인대기','승인완료','반려'].map(function (s) { return h(S.CertTag, { status: s, key: s }); }), ['NONE','TBREQ','TBOK','TBSTP'].map(function (c) { return h(S.TaxTag, { code: c, key: c }); })));
+  ReactDOM.createRoot(document.getElementById('c')).render(h(F, null, ['SN03Z','SN05Z','SN09Z','SN14Z'].map(function (c) { return h(S.StatusTag, { code: c, mobile: true, key: c }); })));
+</script>
+</body>
+</html>

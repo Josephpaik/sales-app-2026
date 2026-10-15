@@ -1,0 +1,12 @@
+<!-- @dsCard group="Status" height=96 -->
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><style>html,body{margin:0}body{padding:16px;}</style></head>
+<body>
+<div id="root" style="display:grid;gap:8px"></div>
+<script>
+  var S = window.SomansaSales, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, [30, 70, 90].map(function (v) { return h('div', { key: v, style: { display: 'flex', gap: 12, alignItems: 'center' } }, h(S.Prob, { value: v }), h('span', { className: 'muted' }, v >= 90 ? '≥ 90% · success' : v >= 50 ? '50–89% · brand' : '< 50% · neutral')); })));
+</script>
+</body>
+</html>
